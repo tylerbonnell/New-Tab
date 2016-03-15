@@ -1,0 +1,26 @@
+body {
+  background-color: #E8E8E8;
+  font-family: sans-serif;
+}
+
+.card {
+  background-color: white;
+  display: inline-block;
+  margin: .5em;
+  box-shadow: 0 .05em .1em gray;
+}
+
+.card h1 {
+  background-color: #379E75;
+  font-size: 15pt;
+  color: white;
+}
+
+.card h1, .card p {
+  margin: 0;
+  padding: 12px;
+}
+
+p {
+  font-family: serif;
+}
