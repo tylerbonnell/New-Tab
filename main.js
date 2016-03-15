@@ -5,11 +5,31 @@ window.onload = function() {
 }
 
 // Loads the background from reddit
-function loadBG() {
+function loadBG(count) {
+  count = count || 5;
   reddit.top('EarthPorn').t('day').limit(5).fetch(function(res) {
     // res contains JSON parsed response from Reddit
-    console.log(res);
+    var img = null;
+    var posts = res.data.children;
+    for (var i = 0; i < posts.length && img == null; i++) {
+      var url = posts[i].data.url;
+      if (url.match(/.*.[jpg|png]$/)) {
+        img = posts[i];
+      } else if (url.match(/.*imgur.com\/\w+/)) {
+        img = posts[i];
+      }
+    }
+    if (img == null) {
+      loadBG(count + 5);
+    } else {
+      setBG(img);
+    }
   });
+}
+
+function setBG(img) {
+  console.log(img.data.url);
+  document.body.style.backgroundImage = "url('" + img.data.url + "')";
 }
 
 var keys = [];
@@ -20,7 +40,7 @@ function addKeyToArray(e) {
   } else {
     keys.push(e.keyCode);
     if (checkCode()) {
-      // konami code!
+      new Audio('audio.mp3').play();
     }
   }
 }
