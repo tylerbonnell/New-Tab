@@ -1,12 +1,15 @@
 window.onload = function() {
   document.onkeydown = addKeyToArray;
   loadBG();
+  updateClock();
+  setInterval(updateClock, 100);
 }
 
 // Loads the background from reddit
 function loadBG(count) {
   count = count || 5;
-  reddit.top('EarthPorn').t('day').limit(5).fetch(function(res) {
+  // get the top count amount pictures from /r/EarthPorn from the past 24 hours
+  reddit.top('EarthPorn').t('day').limit(count).fetch(function(res) {
     // res contains JSON parsed response from Reddit
     var img = null;
     var posts = res.data.children;
@@ -36,6 +39,12 @@ function loadBG(count) {
 function setBG(img) {
   document.body.style.backgroundImage = "url('" + img.data.url + "')";
   // TODO: make a link to the post
+}
+
+function updateClock() {
+  var date = new Date();
+  document.getElementById("clock").innerHTML = date.getHours() % 12 + ":" +
+      (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 }
 
 var keys = [];
