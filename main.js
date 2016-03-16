@@ -1,6 +1,10 @@
+var name = "Tyler";
+var message = "Good evening, {name}."
+
 window.onload = function() {
   document.onkeydown = addKeyToArray;
   loadBG();
+  updateGreeting();
   updateClock();
   setInterval(updateClock, 100);
 }
@@ -41,9 +45,14 @@ function setBG(img) {
   // TODO: make a link to the post
 }
 
+function updateGreeting() {
+  document.getElementById("greeting").innerHTML = message.replace("{name}", name);
+}
+
 function updateClock() {
   var date = new Date();
-  document.getElementById("clock").innerHTML = date.getHours() % 12 + ":" +
+  document.getElementById("clock").innerHTML =
+      (date.getHours() > 12 ? date.getHours % 12 : date.getHours()) + ":" +
       (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 }
 
