@@ -1,14 +1,16 @@
 body {
   background-color: #E8E8E8;
   background-size: cover;
+  background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
 }
 
 .card {
+  opacity: 0.9;
   background-color: white;
   display: inline-block;
   margin: .5em;
-  box-shadow: 0 .05em .1em gray;
+  box-shadow: 0 0 10px gray;
 }
 
 .card h1 {
@@ -23,6 +25,9 @@ body {
 }
 
 #center {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
   color: white;
   font-size: 180px;
   font-weight: 500;
@@ -33,9 +38,10 @@ body {
   height: 30%;
   width: 50%;
   margin: -15% 0 0 -25%;
-  text-shadow: 0 0 5px gray;
+  text-shadow: 0 0 10px gray;
 }
 
 #greeting {
+  line-height: 20px;
   font-size: 50px;
 }
