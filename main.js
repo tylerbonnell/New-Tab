@@ -52,7 +52,7 @@ function updateGreeting() {
 function updateClock() {
   var date = new Date();
   document.getElementById("clock").innerHTML =
-      (date.getHours() > 12 ? date.getHours % 12 : date.getHours()) + ":" +
+      (date.getHours() > 12 ? date.getHours() - 12 : date.getHours()) + ":" +
       (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 }
 
