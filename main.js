@@ -25,10 +25,11 @@ function loadBG(count) {
         var width = parseInt(dimsSplit[0]);
         var height = parseInt(dimsSplit[1]);
         if (width >= 1920 && height >= 1080) {
-          if (url.match(/.*.[jpg|png]$/)) {
+          if (url.match(/.*.(jpg|png)$/)) {
             img = posts[i];
           } else if (url.match(/.*imgur.com\/\w+/)) {
             img = posts[i];
+            posts[i].data.url += ".jpg";
           }
         }
       }
