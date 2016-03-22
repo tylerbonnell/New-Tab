@@ -19,9 +19,10 @@ function loadBG(count) {
     var posts = res.data.children;
     for (var i = 0; i < posts.length && img == null; i++) {
       var url = posts[i].data.url;
-      var dims = posts[i].data.title.match(/\d+ ?x ?\d+/);  // get the dimensions
-      if (dims.length > 0) {
-        var dimsSplit = dims[0].split("x");
+      var dims = posts[i].data.title.match(/\d+ ?[xX×] ?\d+/);  // get the dimensions
+      console.log(dims);
+      if (dims != null) {
+        var dimsSplit = dims[0].split(/[xX×]/);
         var width = parseInt(dimsSplit[0]);
         var height = parseInt(dimsSplit[1]);
         if (width >= 1920 && height >= 1080) {
