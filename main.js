@@ -53,9 +53,11 @@ function updateGreeting() {
 
 function updateClock() {
   var date = new Date();
+  var hrs = date.getHours();
+  if (hrs == 0) hrs = 12;
+  else if (hrs > 12) hrs -= 12;
   document.getElementById("clock").innerHTML =
-      (date.getHours() > 12 ? date.getHours() - 12 : date.getHours()) + ":" +
-      (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+      hrs + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 }
 
 var keys = [];
