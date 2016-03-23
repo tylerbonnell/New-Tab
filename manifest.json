@@ -1,13 +1,14 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 2,
   "name": "Propulsion",
   "version": "1.0",
 
   "permissions": [
-    "downloads"
+    "downloads",
+    "storage",
+    "unlimitedStorage"
   ],
 
-  "default_locale": "en",
   "description": "A beautiful new tab page.",
 
   "chrome_url_overrides": {
