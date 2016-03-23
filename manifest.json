@@ -1,0 +1,16 @@
+{
+  "manifest_version": 1,
+  "name": "Propulsion",
+  "version": "1.0",
+
+  "permissions": [
+    "downloads"
+  ],
+
+  "default_locale": "en",
+  "description": "A beautiful new tab page.",
+
+  "chrome_url_overrides": {
+    "newtab": "propulsion.html"
+  }
+}

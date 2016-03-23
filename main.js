@@ -6,7 +6,7 @@ window.onload = function() {
   loadBG();
   updateGreeting();
   updateClock();
-  setInterval(updateClock, 100);
+  setInterval(updateClock, 1000);
 }
 
 // Loads the background from reddit
