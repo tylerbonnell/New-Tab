@@ -20,7 +20,6 @@ function loadBG(count) {
     for (var i = 0; i < posts.length && img == null; i++) {
       var url = posts[i].data.url;
       var dims = posts[i].data.title.match(/\d+ ?[xX×] ?\d+/);  // get the dimensions
-      console.log(dims);
       if (dims != null) {
         var dimsSplit = dims[0].split(/[xX×]/);
         var width = parseInt(dimsSplit[0]);
