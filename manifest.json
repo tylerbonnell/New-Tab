@@ -5,8 +5,7 @@
 
   "permissions": [
     "downloads",
-    "storage",
-    "unlimitedStorage"
+    "storage"
   ],
 
   "description": "A beautiful new tab page.",
