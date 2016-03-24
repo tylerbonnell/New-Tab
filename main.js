@@ -42,7 +42,12 @@ function loadBG(count) {
   });
 }
 function setBG(img) {
-  document.body.style.backgroundImage = "url('" + img.data.url + "')";
+  var bgImage = new Image();
+  bgImage.onload = function() {
+    document.body.style.backgroundImage = "url('" + bgImage.src + "')";
+    document.getElementById("cover").style.display = "none";
+  }
+  bgImage.src = img.data.url;
   // TODO: make a link to the post
 }
 
